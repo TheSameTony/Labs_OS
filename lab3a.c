@@ -4,7 +4,6 @@
 #include <unistd.h>
 #include <sys/types.h>
 
-void getTime(struct tm *timeinfo);
 
 int main()
 {
