@@ -36,11 +36,8 @@ int main()
         exit(0);
     default:
         sleep (5);
-        time (&sec);
-        timeinfo = localtime(&sec);
-        strftime(buff,128,"%H:%M:%S",timeinfo);
         read(fd[1],buff, sizeof(buff));
-        printf("End Time: %s",buff);
+        printf("Start Time from pipe: %s",buff);
   }
  
 }
