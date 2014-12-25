@@ -38,7 +38,8 @@ int main()
 	pthread_t r_thread, w_thread;
 	
 	
-	mkfifo(path, 0777);
+	if( mkfifo(path, 0777) ==0)
+	{
 	fd = open(path, O_RDWR);
 
 	w_id = 1;
@@ -64,6 +65,9 @@ int main()
         printf("Creating read thread - Success\n");
 
     sleep(1);
+	}
+	else
+	  perror("FIFO error:");
 
 	return 0;
 }
